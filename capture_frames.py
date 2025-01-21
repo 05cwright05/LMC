@@ -27,7 +27,6 @@ def FrameCapture(path):
     if os.name == 'nt':  #windows
         path_header = "processed\\" + path.split("\\")[1].split(".")[0]
     else: #linux
-        print("ran")
         path_header = "processed/" + path.split("/")[1].split(".")[0]
 
     #generate that folder
@@ -70,11 +69,12 @@ def FrameCapture(path):
     
     print(num_frames)
 
+    print(path + " finished" + "\n" + "---" + "\n")
+
 
 # Driver Code 
 if __name__ == '__main__': 
     if len(sys.argv) < 2:
             print("You need to specify a file to be processed")
             sys.exit(1)
-    print(sys.argv[1])
     FrameCapture(sys.argv[1])
