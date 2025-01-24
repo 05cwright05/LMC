@@ -1,4 +1,10 @@
 #!/bin/bash
+if [ -f .setup_complete ]; then
+    # Reactivate the environment and do nothing else
+    echo "Setup already complete. Reactivating the virtual environment."
+    source venv/bin/activate
+    exit
+fi
 
 echo "Setting up the development environment, this may take some time"
 echo "Verifying OS"
@@ -51,3 +57,5 @@ fi
 echo "Dependencies Installed"
 
 echo "Python environment setup complete."
+
+touch .setup_complete
