@@ -4,3 +4,4 @@ videos/*
 processed/
 .venv/
 venv/
+.setup_complete
